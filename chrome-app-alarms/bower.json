@@ -1,0 +1,11 @@
+{
+  "name": "chrome-app-alarms",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#master"
+  },
+  "ignore": [
+    "externs/**",
+    ".gitignore"
+  ]
+}

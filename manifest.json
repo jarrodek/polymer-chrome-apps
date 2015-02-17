@@ -12,6 +12,7 @@
     "syncFileSystem",
     "clipboardWrite",
     "idle",
+    "alarms",
     {"fileSystem": ["write"]}
   ],
   "app": {

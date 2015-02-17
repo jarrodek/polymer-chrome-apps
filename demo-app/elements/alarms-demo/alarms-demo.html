@@ -1,0 +1,51 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<link rel="import" href="../../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../../bower_components/paper-input/paper-input-decorator.html">
+
+
+<link rel="import" href="../roboto/roboto.html">
+<link rel="import" href="../../../chrome-app-alarms/chrome-app-alarms.html">
+<link rel="import" href="../app-log/app-log.html">
+
+
+<polymer-element name="alarms-demo">
+  <template>
+    <style></style>
+
+    <div layout vertical>
+      <h1>chrome-app-alarms</h1>
+
+      <section layout horizontal center>
+        <!-- alarm name -->
+        <paper-input-decorator label="Alarm name">
+          <input is="core-input" type="text" value="{{name}}">
+        </paper-input-decorator>
+
+        <!-- alarm interval -->
+        <paper-input-decorator label="Interval / period (min)">
+          <input is="core-input" type="number" value="{{interval}}" min="1">
+        </paper-input-decorator>
+
+        <!-- action buttons -->
+        <paper-button on-click="{{setAlarm}}">set</paper-button>
+        <paper-button on-click="{{getAlarm}}">get</paper-button>
+        <paper-button on-click="{{clearAlarm}}">clear</paper-button>
+
+      </section>
+
+
+      <!-- log section. -->
+      <section>
+        <app-log id="log"></app-log>
+      </section>
+
+      <chrome-app-alarms id="alarms" on-alarm-info="{{onAlarmInfo}}" on-alarm="{{onAlarm}}" name="{{name}}"></chrome-app-alarms>
+
+    </div>
+
+
+
+  </template>
+  <script src="alarms-demo.js"></script>
+</polymer-element>
