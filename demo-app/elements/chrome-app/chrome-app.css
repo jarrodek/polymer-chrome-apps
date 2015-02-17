@@ -1,0 +1,71 @@
+:host {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  font-family: RobotoDraft, sans-serif;
+}
+#core_menu {
+  font-size: 16px;
+  left: -10px;
+  top: -10px;
+  position: absolute;
+}
+.content-card{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: block;
+}
+
+.dark core-toolbar{
+  background-color: #3F51B5;
+}
+paper-dropdown-menu{
+  padding-right: 24px;
+}
+.dark paper-dropdown-menu /deep/ #label,
+.dark paper-dropdown-menu /deep/ #arrow,
+.dark paper-input-decorator /deep/ input,
+.dark .header-icon {
+  color: rgba(255, 255, 255, 0.87) !important;
+}
+.dark paper-dropdown-menu {
+  border-bottom-color: rgba(255, 255, 255, 0.87);
+  padding-bottom: 0;
+}
+
+.dark paper-input-decorator /deep/ .label-text,
+.dark paper-input-decorator /deep/ .error {
+  color: rgba(255, 255, 255, 0.87);
+}
+paper-input-decorator /deep/ ::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.26);
+}
+
+paper-input-decorator /deep/ .unfocused-underline {
+  background-color: rgba(255, 255, 255, 0.87);
+}
+
+:host /deep/ paper-tabs::shadow #selectionBar {
+  background-color: #C5CAE9;
+}
+:host /deep/ paper-tabs paper-tab::shadow #ink{
+  color: #C5CAE9;
+}
+:host /deep/ paper-tabs {
+  margin-bottom: 8px;
+}
+
+core-animated-pages {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /*overflow: hidden;*/
+}
+
+section > div.page{
+  height: 100%;
+  padding: 20px;
+}

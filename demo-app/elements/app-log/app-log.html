@@ -1,0 +1,26 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<link rel="import" href="../roboto/roboto.html">
+<link rel="import" href="app-log-item.html">
+
+<polymer-element name="app-log">
+  <template>
+    <style>
+      :host{
+        background-color: #fff;
+        display: block;
+        padding: 20px;
+      }
+      .label{
+        font-size: 13px;
+        color: rgba(0,0,0,0.54);
+      }
+      .log-frame{}
+    </style>
+    <p class="label">Execution log</p>
+    <section class="log-frame" id="content">
+      <content></content>
+    </section>
+  </template>
+  <script src="app-log.js"></script>
+</polymer-element>

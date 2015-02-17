@@ -1,0 +1,35 @@
+body {
+  font-family: RobotoDraft, sans-serif;
+  color: #333;
+  margin: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+  background-color: #F5F5F5;
+}
+
+body {transition: opacity ease-in 0.2s; }
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; }
+
+/*
+
+color pallete:
+100: #C5CAE9
+500: #3F51B5
+800: #283593
+
+
+PRIMARY COLOR:
+color: rgba(0,0,0,0.87);
+
+SECONDARY COLOR:
+color: rgba(0,0,0,0.54);
+
+HINT TEXT COLOR:
+color: rgba(0,0,0,0.26);
+
+*/
+
