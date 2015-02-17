@@ -18,6 +18,7 @@
 
 <link rel="import" href="../roboto/roboto.html">
 <link rel="import" href="../filesystem-demo/filesystem-demo.html">
+<link rel="import" href="../idle-demo/idle-demo.html">
 
 
 <polymer-element name="chrome-app">
@@ -34,7 +35,7 @@
         </core-toolbar>
         <core-menu selected="{{selectedPage}}">
           <core-item>(sync) FileSystem</core-item>
-          <core-item>... other</core-item>
+          <core-item>Iddle</core-item>
         </core-menu>
        </core-header-panel>
 
@@ -48,14 +49,14 @@
         <div id="content">
 
           <core-animated-pages transitions="cross-fade-all" selected="{{selectedPage}}">
-            <section id="page1">
+            <section>
               <div class="page" layout vertical>
                 <filesystem-demo></filesystem-demo>
               </div>
             </section>
-            <section id="page2">
+            <section>
               <div class="page" layout vertical>
-                <p>2222</p>
+                <idle-demo></idle-demo>
               </div>
             </section>
           </core-animated-pages>

@@ -1,0 +1,49 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<link rel="import" href="../../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../../bower_components/paper-input/paper-input-decorator.html">
+
+
+<link rel="import" href="../roboto/roboto.html">
+<link rel="import" href="../../../chrome-app-idle/chrome-app-idle.html">
+<link rel="import" href="../app-log/app-log.html">
+
+
+<polymer-element name="idle-demo">
+  <template>
+    <style></style>
+
+    <div layout vertical>
+      <h1>chrome-app-idle</h1>
+
+      <section layout horizontal center>
+        <!-- file name -->
+        <paper-input-decorator label="Interval time">
+          <input is="core-input" type="number" value="{{interval}}">
+        </paper-input-decorator>
+
+        <paper-button on-click="{{queryState}}">current state</paper-button>
+
+        <span>
+          Current state is <span>{{state}}</span>
+        </span>
+
+      </section>
+
+
+      <!-- log section. -->
+      <section>
+        <app-log id="log"></app-log>
+      </section>
+
+    </div>
+
+    <chrome-app-idle id="idle"
+      interval="{{interval}}"
+      on-state-changed="{{showState}}"
+      on-state="{{showState}}"
+      on-error="{{iddleError}}"></chrome-app-idle>
+
+  </template>
+  <script src="idle-demo.js"></script>
+</polymer-element>

@@ -11,6 +11,7 @@
     "unlimitedStorage",
     "syncFileSystem",
     "clipboardWrite",
+    "idle",
     {"fileSystem": ["write"]}
   ],
   "app": {
