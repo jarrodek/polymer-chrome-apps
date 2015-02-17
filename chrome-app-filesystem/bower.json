@@ -1,0 +1,11 @@
+{
+  "name": "chrome-app-filesystem",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#master"
+  },
+  "ignore": [
+    "externs/**",
+    ".gitignore"
+  ]
+}
