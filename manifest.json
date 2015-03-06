@@ -15,6 +15,7 @@
     "alarms",
     {"fileSystem": ["write"]}
   ],
+  "bluetooth": { },
   "app": {
     "background": {
       "scripts": ["demo-app/js/background.js"]
