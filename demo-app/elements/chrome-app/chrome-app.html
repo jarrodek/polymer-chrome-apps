@@ -20,6 +20,7 @@
 <link rel="import" href="../filesystem-demo/filesystem-demo.html">
 <link rel="import" href="../idle-demo/idle-demo.html">
 <link rel="import" href="../alarms-demo/alarms-demo.html">
+<link rel="import" href="../bluetooth-demo/bluetooth-demo.html">
 
 
 <polymer-element name="chrome-app">
@@ -38,6 +39,7 @@
           <core-item>(sync) FileSystem</core-item>
           <core-item>Idle</core-item>
           <core-item>Alarms</core-item>
+          <core-item>Bluetooth</core-item>
         </core-menu>
        </core-header-panel>
 
@@ -65,6 +67,13 @@
               <div class="page">
                 <template if="{{selectedPage === 2}}">
                   <alarms-demo></alarms-demo>
+                </template>
+              </div>
+            </section>
+            <section>
+              <div class="page">
+                <template if="{{selectedPage === 3}}">
+                  <bluetooth-demo></bluetooth-demo>
                 </template>
               </div>
             </section>
