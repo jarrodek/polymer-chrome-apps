@@ -1,0 +1,15 @@
+{
+  "name": "chrome-app-window",
+  "homepage": "https://github.com/jarrodek/polymer-chrome-apps",
+  "keywords": [
+    "webcomponents", "polymer", "chrome-apps", "chrome"
+  ],
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#master"
+  },
+  "ignore": [
+    "externs/**",
+    ".gitignore"
+  ]
+}

@@ -1,5 +1,6 @@
 <link rel="import" href="/bower_components/polymer/polymer.html">
 
+<link rel="import" href="/bower_components/core-item/core-item.html">
 <link rel="import" href="/bower_components/paper-button/paper-button.html">
 
 <link rel="import" href="../roboto/roboto.html">
@@ -10,6 +11,10 @@
 <polymer-element name="bluetooth-demo">
   <template>
     <style>
+      [error] {
+        background-color: red;
+        color: #fff;
+      }
       [warning] {
         background-color: yellow;
       }
@@ -38,6 +43,9 @@
       .device-item .device-status span:first-child{
         margin-right: 8px;
       }
+      .adapter-info core-item span:nth-child(2){
+        padding-left: 8px;
+      }
     </style>
 
     <div layout vertical>
@@ -50,27 +58,27 @@
           <paper-button on-tap="{{queryAdapterState}}">Refresh</paper-button>
         </div>
 
-        <div layout vertical>
-          <div layout horizontal>
-            <p class="label">Device name:</p>
-            <p flex>{{deviceName}}</p>
-          </div>
-          <div layout horizontal>
-            <p class="label">Address:</p>
-            <p flex>{{deviceAddress}}</p>
-          </div>
-          <div layout horizontal>
-            <p class="label">Available:</p>
-            <p warning?="{{!adapterAvailable}}" flex>{{adapterAvailable}}</p>
-          </div>
-          <div layout horizontal>
-            <p class="label">Discovering:</p>
-            <p success?="{{adapterDiscovering}}" flex>{{adapterDiscovering}}</p>
-          </div>
-          <div layout horizontal>
-            <p class="label">Powered:</p>
-            <p warning?="{{!adapterPowered}}" flex>{{adapterPowered}}</p>
-          </div>
+        <div layout vertical class="adapter-info">
+          <core-item layout horizontal>
+            <span class="label">Device name:</span>
+            <span>{{deviceName}}</span>
+          </core-item>
+          <core-item layout horizontal>
+            <span class="label">Address:</span>
+            <span>{{deviceAddress}}</span>
+          </core-item>
+          <core-item layout horizontal>
+            <span class="label">Available:</span>
+            <span error?="{{!adapterAvailable}}" layout horizontal flex center self-stretch>{{adapterAvailable}}</span>
+          </core-item>
+          <core-item layout horizontal>
+            <span class="label">Discovering:</span>
+            <span success?="{{adapterDiscovering}}" layout horizontal flex center self-stretch>{{adapterDiscovering}}</span>
+          </core-item>
+          <core-item layout horizontal>
+            <span class="label">Powered:</span>
+            <span warning?="{{!adapterPowered}}" layout horizontal flex center self-stretch>{{adapterPowered}}</span>
+          </core-item>
         </div>
       </section>
 
@@ -78,8 +86,8 @@
       <section>
         <div layout horizontal>
           <h2 flex>Devices</h2>
-          <paper-button hidden?="{{adapterDiscovering}}" on-tap="{{startDiscovery}}">Start discovery</paper-button>
-          <paper-button hidden?="{{!adapterDiscovering}}" on-tap="{{stopDiscovery}}">Stop discovery</paper-button>
+          <paper-button hidden?="{{adapterDiscovering || !adapterAvailable}}" on-tap="{{startDiscovery}}">Start discovery</paper-button>
+          <paper-button hidden?="{{!adapterDiscovering || !adapterAvailable}}" on-tap="{{stopDiscovery}}">Stop discovery</paper-button>
         </div>
 
         <div>

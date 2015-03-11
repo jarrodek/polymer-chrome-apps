@@ -4,8 +4,8 @@ Polymer('bluetooth-demo', {
     this.queryAdapterState();
   },
 
-  deviceName: '',
-  deviceAddress: '',
+  deviceName: 'unknown',
+  deviceAddress: 'unknown',
   adapterAvailable: undefined,
   adapterDiscovering: undefined,
   adapterPowered: undefined,
@@ -15,6 +15,7 @@ Polymer('bluetooth-demo', {
 
   queryAdapterState: function(){
     var context = this;
+    this.$.log.append('Query adapter state');
     this.$.bluetooth.adapterState()
     .then(function(adapterInfo){
       console.log('queryAdapterState', adapterInfo);
@@ -22,12 +23,15 @@ Polymer('bluetooth-demo', {
     })
     .catch(function(error){
       console.error(error);
+      context.$.log.append('Query adapter state error: ' + JSON.stringify(error));
     });
   },
 
   _setAdapterInfo: function(adapterInfo){
-    this.deviceName = adapterInfo.name;
-    this.deviceAddress = adapterInfo.address;
+    this.$.log.append('New adapter info available: ' + JSON.stringify(adapterInfo));
+
+    this.deviceName = adapterInfo.name || 'unknown';
+    this.deviceAddress = adapterInfo.address || 'unknown';
     this.adapterAvailable = adapterInfo.available;
     this.adapterDiscovering = adapterInfo.discovering;
     this.adapterPowered = adapterInfo.powered;

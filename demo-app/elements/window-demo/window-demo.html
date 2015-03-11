@@ -1,0 +1,77 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<link rel="import" href="../../../bower_components/core-label/core-label.html">
+<link rel="import" href="../../../bower_components/core-menu/core-menu.html">
+<link rel="import" href="../../../bower_components/core-item/core-item.html">
+
+<link rel="import" href="../../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../../bower_components/paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../../../bower_components/paper-dropdown/paper-dropdown.html">
+<link rel="import" href="../../../bower_components/paper-item/paper-item.html">
+
+<link rel="import" href="../roboto/roboto.html">
+<link rel="import" href="../../../chrome-app-window/chrome-app-window.html">
+<link rel="import" href="../app-log/app-log.html">
+
+
+<polymer-element name="window-demo">
+  <template>
+    <style>
+      paper-checkbox{
+        vertical-align: middle;
+      }
+    </style>
+
+    <div layout vertical>
+      <h1>chrome-app-window</h1>
+
+      <section>
+        <!-- file name -->
+        <paper-input-decorator label="Window name (id)">
+          <input is="core-input" type="text" value="{{windowid}}">
+        </paper-input-decorator>
+        <core-item>
+          <paper-button on-click="{{openWindow}}" hidden?="{{isOpened}}">open</paper-button>
+          <paper-button on-click="{{closeWindow}}" hidden?="{{!isOpened}}">close</paper-button>
+        </core-item>
+        <core-item>
+          <core-label>
+            <paper-checkbox for checked="{{windowhidden}}"></paper-checkbox>
+            HIDDEN
+          </core-label>
+        </core-item>
+
+        <core-item>
+          Frame options:
+          <paper-dropdown-menu label="Frame options">
+            <paper-dropdown class="dropdown">
+              <core-menu class="menu" valueattr="value" selected="{{frameOption}}">
+                <paper-item value="none">none</paper-item>
+                <paper-item value="chrome">chrome</paper-item>
+              </core-menu>
+            </paper-dropdown>
+          </paper-dropdown-menu>
+        </core-item>
+
+      </section>
+
+      <!-- log section. -->
+      <section>
+        <app-log id="log"></app-log>
+      </section>
+
+    </div>
+
+    <chrome-app-window id="window"
+      url="/demo-app/elements/window-demo/demo.html"
+      name="{{windowid}}"
+      frame="{{frameOption}}"
+      state="normal"
+      windowhidden="{{windowhidden}}"
+      on-created="{{onCreated}}"
+      on-error="{{onError}}"></chrome-app-window>
+
+  </template>
+  <script src="window-demo.js"></script>
+</polymer-element>
