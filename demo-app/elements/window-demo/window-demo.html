@@ -35,10 +35,25 @@
           <paper-button on-click="{{openWindow}}" hidden?="{{isOpened}}">open</paper-button>
           <paper-button on-click="{{closeWindow}}" hidden?="{{!isOpened}}">close</paper-button>
         </core-item>
+
         <core-item>
           <core-label>
             <paper-checkbox for checked="{{windowhidden}}"></paper-checkbox>
             HIDDEN
+          </core-label>
+        </core-item>
+
+        <core-item>
+          <core-label>
+            <paper-checkbox for checked="{{windowmaximized}}"></paper-checkbox>
+            MAXIMIZE
+          </core-label>
+        </core-item>
+
+        <core-item>
+          <core-label>
+            <paper-checkbox for checked="{{windowminimized}}"></paper-checkbox>
+            MINIMIZE
           </core-label>
         </core-item>
 
@@ -67,8 +82,10 @@
       url="/demo-app/elements/window-demo/demo.html"
       name="{{windowid}}"
       frame="{{frameOption}}"
-      state="normal"
+      state="{{windowState}}"
       windowhidden="{{windowhidden}}"
+      maximized="{{windowmaximized}}"
+      minimized="{{windowminimized}}"
       on-created="{{onCreated}}"
       on-error="{{onError}}"></chrome-app-window>
 

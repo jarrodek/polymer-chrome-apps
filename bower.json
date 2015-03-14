@@ -12,6 +12,7 @@
     "paper-elements": "Polymer/paper-elements#latest",
     "core-ajax": "Polymer/core-ajax#latest",
     "core-pages": "Polymer/core-pages#latest",
+    "core-label": "Polymer/core-label#latest",
     "core-animated-pages": "Polymer/core-animated-pages#latest",
     "paper-dialog-fullscreen": "bendavis78/paper-dialog-fullscreen"
   },
