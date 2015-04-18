@@ -4,7 +4,7 @@
 <link rel="import" href="/bower_components/paper-button/paper-button.html">
 
 <link rel="import" href="../roboto/roboto.html">
-<link rel="import" href="../../../chrome-app-bluetooth/chrome-app-bluetooth.html">
+<link rel="import" href="/bower_components/chrome-bluetooth/chrome-bluetooth.html">
 <link rel="import" href="../app-log/app-log.html">
 
 
@@ -112,7 +112,7 @@
         <app-log id="log"></app-log>
       </section>
 
-      <chrome-app-bluetooth
+      <chrome-bluetooth
         id="bluetooth"
         on-device-added="{{onDeviceAdded}}"
         on-device-changed="{{onDeviceChanged}}"
@@ -121,7 +121,7 @@
         on-error="{{onError}}"
         on-device="{{onDevice}}"
         on-discovery="{{onDiscoveryStateChanged}}"
-        ></chrome-app-bluetooth>
+        ></chrome-bluetooth>
 
     </div>
 

@@ -11,7 +11,7 @@
 <link rel="import" href="../../../bower_components/paper-item/paper-item.html">
 
 <link rel="import" href="../roboto/roboto.html">
-<link rel="import" href="../../../chrome-app-window/chrome-app-window.html">
+<link rel="import" href="/bower_components/chrome-window/chrome-window.html">
 <link rel="import" href="../app-log/app-log.html">
 
 
@@ -78,7 +78,7 @@
 
     </div>
 
-    <chrome-app-window id="window"
+    <chrome-window id="window"
       url="/demo-app/elements/window-demo/demo.html"
       name="{{windowid}}"
       frame="{{frameOption}}"
@@ -87,7 +87,7 @@
       maximized="{{windowmaximized}}"
       minimized="{{windowminimized}}"
       on-created="{{onCreated}}"
-      on-error="{{onError}}"></chrome-app-window>
+      on-error="{{onError}}"></chrome-window>
 
   </template>
   <script src="window-demo.js"></script>

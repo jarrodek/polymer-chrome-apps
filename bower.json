@@ -14,7 +14,12 @@
     "core-pages": "Polymer/core-pages#latest",
     "core-label": "Polymer/core-label#latest",
     "core-animated-pages": "Polymer/core-animated-pages#latest",
-    "paper-dialog-fullscreen": "bendavis78/paper-dialog-fullscreen"
+    "paper-dialog-fullscreen": "bendavis78/paper-dialog-fullscreen",
+    "chrome-alarms": "jarrodek/chrome-alarms",
+    "chrome-bluetooth": "jarrodek/chrome-bluetooth",
+    "chrome-filesystem": "jarrodek/chrome-filesystem",
+    "chrome-idle": "jarrodek/chrome-idle",
+    "chrome-window": "jarrodek/chrome-window"
   },
   "ignore": [
     "externs/**",

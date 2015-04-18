@@ -5,7 +5,7 @@
 
 
 <link rel="import" href="../roboto/roboto.html">
-<link rel="import" href="../../../chrome-app-idle/chrome-app-idle.html">
+<link rel="import" href="/bower_components/chrome-idle/chrome-idle.html">
 <link rel="import" href="../app-log/app-log.html">
 
 
@@ -38,11 +38,11 @@
 
     </div>
 
-    <chrome-app-idle id="idle"
+    <chrome-idle id="idle"
       interval="{{interval}}"
       on-state-changed="{{showState}}"
       on-state="{{showState}}"
-      on-error="{{iddleError}}"></chrome-app-idle>
+      on-error="{{iddleError}}"></chrome-idle>
 
   </template>
   <script src="idle-demo.js"></script>
